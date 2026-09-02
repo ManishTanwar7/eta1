@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel-bg: #1e293b;
+      --panel-border: #334155;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --header-bg: #0b1220;
+      --row-alt: #16213a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--panel-border);
+      padding-bottom: 16px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      color: var(--muted);
+    }
+    .badge.mock {
+      color: #fbbf24;
+      border-color: #92400e;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 20px;
+    }
+    .panel {
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 10px;
+      padding: 16px;
+      overflow-x: auto;
+    }
+    .panel h2 {
+      margin: 0 0 4px 0;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+    .panel .meta {
+      margin: 0 0 12px 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    thead th {
+      text-align: left;
+      background: var(--header-bg);
+      color: var(--accent);
+      padding: 8px 10px;
+      border-bottom: 2px solid var(--panel-border);
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+    }
+    tbody td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--panel-border);
+      white-space: nowrap;
+    }
+    tbody tr:nth-child(even) {
+      background: var(--row-alt);
+    }
+    .empty {
+      color: var(--muted);
+      font-style: italic;
+      padding: 12px 0;
+    }
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{ title }}</h1>
+    <span class="badge {% if use_mock_data %}mock{% endif %}">
+      {% if use_mock_data %}Mock data mode{% else %}Live data mode{% endif %}
+    </span>
+  </header>
+
+  <div class="grid">
+    {% for panel in panels %}
+      <section class="panel">
+        <h2>{{ panel.title }}</h2>
+        <p class="meta">{{ panel.key }}.json &middot; {{ panel.row_count }} row{{ 's' if panel.row_count != 1 else '' }}</p>
+
+        {% if panel.rows and panel.columns %}
+          <table>
+            <thead>
+              <tr>
+                {% for col in panel.columns %}
+                  <th>{{ col }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in panel.rows %}
+                <tr>
+                  {% for col in panel.columns %}
+                    <td>{{ row.get(col, "") }}</td>
+                  {% endfor %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p class="empty">No data available for this panel.</p>
+        {% endif %}
+      </section>
+    {% endfor %}
+  </div>
+
+  <footer>
+    Served by FastAPI &middot; datasets loaded from <code>/datasets</code>
+  </footer>
+</body>
+</html>
