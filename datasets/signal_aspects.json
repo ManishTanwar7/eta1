@@ -1,0 +1,16 @@
+[
+  {
+    "signal_id": "SIG-0042",
+    "location": "Junction 5A",
+    "aspect": "Green",
+    "route": "Route 7 - North Line",
+    "last_changed": "2026-09-02T08:14:30Z"
+  },
+  {
+    "signal_id": "SIG-0067",
+    "location": "Junction 9C",
+    "aspect": "Red",
+    "route": "Route 3 - South Loop",
+    "last_changed": "2026-09-02T08:12:05Z"
+  }
+]

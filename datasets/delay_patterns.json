@@ -1,0 +1,16 @@
+[
+  {
+    "route": "Route 7 - North Line",
+    "avg_delay_min": 6.3,
+    "on_time_pct": 87.2,
+    "primary_cause": "Signal congestion",
+    "period": "2026-08"
+  },
+  {
+    "route": "Route 3 - South Loop",
+    "avg_delay_min": 11.8,
+    "on_time_pct": 74.5,
+    "primary_cause": "Weather - heavy rain",
+    "period": "2026-08"
+  }
+]

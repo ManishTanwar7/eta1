@@ -1,0 +1,18 @@
+[
+  {
+    "station_id": "STN-01",
+    "station_name": "Central Junction",
+    "platforms_active": 4,
+    "passenger_load": "High",
+    "next_departure": "2026-09-02T08:25:00Z",
+    "status": "Normal"
+  },
+  {
+    "station_id": "STN-05",
+    "station_name": "Riverside Terminal",
+    "platforms_active": 2,
+    "passenger_load": "Medium",
+    "next_departure": "2026-09-02T08:30:00Z",
+    "status": "Delayed"
+  }
+]

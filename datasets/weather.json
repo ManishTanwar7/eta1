@@ -1,0 +1,20 @@
+[
+  {
+    "station_id": "WX-014",
+    "location": "Kharar, Punjab",
+    "temperature_c": 31.2,
+    "humidity_pct": 68,
+    "wind_speed_kmh": 12.4,
+    "condition": "Partly Cloudy",
+    "timestamp": "2026-09-02T08:00:00Z"
+  },
+  {
+    "station_id": "WX-021",
+    "location": "Chandigarh",
+    "temperature_c": 29.8,
+    "humidity_pct": 71,
+    "wind_speed_kmh": 9.1,
+    "condition": "Light Rain",
+    "timestamp": "2026-09-02T08:00:00Z"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "vehicle_id": "TRN-1042",
+    "route": "Route 7 - North Line",
+    "latitude": 30.7333,
+    "longitude": 76.7794,
+    "speed_kmh": 62.5,
+    "heading_deg": 184,
+    "timestamp": "2026-09-02T08:15:00Z"
+  },
+  {
+    "vehicle_id": "TRN-1077",
+    "route": "Route 3 - South Loop",
+    "latitude": 30.6942,
+    "longitude": 76.8021,
+    "speed_kmh": 45.1,
+    "heading_deg": 92,
+    "timestamp": "2026-09-02T08:16:00Z"
+  }
+]

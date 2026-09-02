@@ -1,0 +1,18 @@
+[
+  {
+    "segment_id": "SEG-118",
+    "route": "Route 7 - North Line",
+    "congestion_level": "High",
+    "vehicles_active": 14,
+    "avg_speed_kmh": 21.3,
+    "timestamp": "2026-09-02T08:10:00Z"
+  },
+  {
+    "segment_id": "SEG-204",
+    "route": "Route 3 - South Loop",
+    "congestion_level": "Moderate",
+    "vehicles_active": 9,
+    "avg_speed_kmh": 38.7,
+    "timestamp": "2026-09-02T08:10:00Z"
+  }
+]
