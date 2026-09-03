@@ -19,6 +19,7 @@ fake_users_db = {
     "passenger": {"username": "passenger", "password": pwd_context.hash("pass123"), "role": "passenger"},
 }
 
+
 def verify_password(plain, hashed):
     return pwd_context.verify(plain, hashed)
 
