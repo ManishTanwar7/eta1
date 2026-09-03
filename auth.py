@@ -13,11 +13,13 @@ pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 fake_users_db = {
+fake_users_db = {
     "admin": {"username": "admin", "password": pwd_context.hash("admin123"), "role": "admin"},
     "master": {"username": "master", "password": pwd_context.hash("master123"), "role": "station_master"},
     "employee": {"username": "employee", "password": pwd_context.hash("emp123"), "role": "employee"},
     "passenger": {"username": "passenger", "password": pwd_context.hash("pass123"), "role": "passenger"},
 }
+
 
 
 def verify_password(plain, hashed):
