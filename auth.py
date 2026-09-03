@@ -8,19 +8,33 @@ SECRET_KEY = "supersecretkey"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
+# Use sha256_crypt for demo passwords (no 72-byte limit issues)
 pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated="auto")
-
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
+# Demo users with hashed passwords
 fake_users_db = {
-fake_users_db = {
-    "admin": {"username": "admin", "password": pwd_context.hash("admin123"), "role": "admin"},
-    "master": {"username": "master", "password": pwd_context.hash("master123"), "role": "station_master"},
-    "employee": {"username": "employee", "password": pwd_context.hash("emp123"), "role": "employee"},
-    "passenger": {"username": "passenger", "password": pwd_context.hash("pass123"), "role": "passenger"},
+    "admin": {
+        "username": "admin",
+        "password": pwd_context.hash("admin123"),
+        "role": "admin"
+    },
+    "master": {
+        "username": "master",
+        "password": pwd_context.hash("master123"),
+        "role": "station_master"
+    },
+    "employee": {
+        "username": "employee",
+        "password": pwd_context.hash("emp123"),
+        "role": "employee"
+    },
+    "passenger": {
+        "username": "passenger",
+        "password": pwd_context.hash("pass123"),
+        "role": "passenger"
+    }
 }
-
-
 
 def verify_password(plain, hashed):
     return pwd_context.verify(plain, hashed)
